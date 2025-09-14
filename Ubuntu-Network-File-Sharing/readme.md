@@ -23,7 +23,7 @@ Set up a Samba file share on a local Ubuntu Server VM and access it from two dif
 
 This lab demonstrates basic network file sharing across platforms using Samba, simulating a small-scale office or home network environment.
 
-In a future (optional) Phase 2, access to the Ubuntu Server will be restricted using an **OPNsense firewall**, simulating zone-based access control and improved network security.
+In a following projects, access to the Ubuntu Server will be restricted using an **OPNsense firewall**, simulating zone-based access control and improved network security.
 
 
 🖼️ See the `Network-diagram.png` for a visual overview of the setup.
