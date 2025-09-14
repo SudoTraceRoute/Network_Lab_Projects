@@ -145,6 +145,12 @@ Cx File Explorer showing share
 OPNsense rule (if added)
 
 
+Network Diagram
+
+Diagram shows devices on the same LAN (192.168.1.0/24), connections via physical router, and VM adapter types.
+
+
+
 🧠 Lessons Learned
 IP conflicts silently break LAN access — always check both ends
 
