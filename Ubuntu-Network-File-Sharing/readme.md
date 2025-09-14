@@ -152,8 +152,6 @@ Share appears as expected
 ---
 **Network Diagram**
 
-Network Diagram Description
-
 The network diagram illustrates the current lab setup:
 
 Physical LAN (192.168.1.0/24):
