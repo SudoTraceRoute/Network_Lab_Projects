@@ -143,7 +143,7 @@ Share appears as expected
 
 ---
 
-**Please see the screenshots of this process**
+```
 
 ---
 
