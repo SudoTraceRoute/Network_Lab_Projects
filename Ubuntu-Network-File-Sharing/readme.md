@@ -22,7 +22,7 @@ Set up a Samba file share on a local Ubuntu Server VM and access it from two dif
    Download a photo from the server
 
 This lab demonstrates cross-platform file sharing and access control using Samba.  
-In a next projects, access to the Ubuntu Server will be restricted via an **OPNsense firewall**, simulating a more secure network environment.
+In the next projects, access to the Ubuntu Server will be restricted via an **OPNsense firewall**, simulating a more secure network environment.
 
 ---
 
