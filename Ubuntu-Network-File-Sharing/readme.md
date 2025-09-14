@@ -13,7 +13,7 @@ This lab simulates a small home network environment using:
 
 ## 📂 Goal
 
-Set up a Samba file share on a local Ubuntu Server VM and access it from an Android phone connected to the same LAN, with restricted access configured via OPNsense firewall (optional phase 2).
+Set up a Samba file share on a local Ubuntu Server VM and access it from an Android phone connected to the same LAN. Upload a photo from the Android phone to the server, then download a photo from the Ubuntu Server using Lubuntu VM. Restricted access to the Ubuntu Server will be configured via OPNsense firewall in the next projects (optional phase 2).
 
 ---
 
