@@ -151,7 +151,72 @@ Optional:
 
 ---
 
+**📘 How to install OPNsense**
 
+Prerequisites
+    • A host machine with VirtualBox installed (tested with VirtualBox 7.0.4)
+    • Basic familiarity with Linux command line and networking concepts
+
+🖥️ Step 1: Download OPNsense Image
+    1. Go to the official OPNsense Downloads page.
+    2. Select architecture: amd64
+    3. Select image type: VGA
+    4. Download the .img file (usually compressed).
+    5. Decompress .img file using unxz or similar tool.
+
+📀 Step 2: Create OPNsense VM in VirtualBox
+    1. Open VirtualBox and click New.
+    2. Name: OPNsense
+    3. Type: BSD
+    4. Version: FreeBSD (64-bit)
+    5. Assign RAM (e.g., 1024 MB or less for resource constraints).
+    6. Do NOT create a virtual hard disk — boot directly from the .img file.
+    7. In VM settings → Storage → Attach the .img file as a virtual optical drive or use a raw disk option.
+
+🌐 Step 3: Configure VirtualBox Network Adapters
+    • Adapter 1 (WAN):
+        ◦ Attached to: NAT
+        ◦ This gives OPNsense internet access.
+    • Adapter 2 (LAN):
+        ◦ Attached to: Internal Network
+        ◦ Name: intnet (or any chosen name)
+        ◦ This creates a private LAN network for testing.
+Make sure both adapters are enabled.
+
+🚀 Step 4: Install OPNsense
+    1. Start the VM.
+    2. Follow the console prompts to install OPNsense.
+    3. When prompted for interface assignments:
+        ◦ Do not configure LAGG or VLANs (choose n to skip).
+        ◦ Assign em0 as WAN.
+        ◦ Assign em1 as LAN.
+    4. Confirm assignments and complete installation.
+
+🛠️ Step 5: Assign Network Interfaces
+    • WAN (em0) should receive an IP automatically via DHCP from VirtualBox NAT (e.g., 10.0.2.15).
+    • LAN (em1) will use the default IP 192.168.1.1/24.
+If no WAN IP is assigned, manually renew the DHCP lease from the console menu.
+
+Step 6: Verify Network Interfaces and IPs
+At the OPNsense console, you should see:
+WAN (em0) -> 10.0.2.15 (DHCP)
+LAN (em1) -> 192.168.1.1/24
+This confirms the firewall VM has internet access and is ready to serve LAN clients.
+
+🛠️ Next Steps: Setting Up Client VM
+To test the OPNsense LAN and firewall features:
+    1. Create a second VM (e.g., lightweight Linux like Alpine Linux, Lubuntu or Debian Netinst).
+    2. Attach its network adapter to the same Internal Network (intnet).
+    3. Boot the client VM and verify it gets an IP address from OPNsense’s DHCP (e.g., 192.168.1.x).
+    4. Test connectivity by pinging the OPNsense LAN IP:
+       ping 192.168.1.1
+    5. Access the OPNsense web interface at:
+       https://192.168.1.1
+       Use default credentials:
+        ◦ Username: root
+        ◦ Password: opnsense
+
+---
 
 
 
