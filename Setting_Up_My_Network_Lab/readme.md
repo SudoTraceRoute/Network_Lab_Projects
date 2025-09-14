@@ -1,7 +1,8 @@
 Here you will find the instructions on how to install and configure Ubuntu server runing Samba, Lubuntu and OPNsense in VirtualBox.
 
-'''
+
 **📘 Lubuntu Installation – VirtualBox Setup Guide**
+
 This guide outlines the process of installing Lubuntu 24.04 (or similar versions) in a VirtualBox virtual machine. Lubuntu was selected as a lightweight desktop client OS for use in a virtual networking lab (with OPNsense and Ubuntu Server).
 
 🖥️ 1. Create New VM in VirtualBox
@@ -65,4 +66,65 @@ This guide outlines the process of installing Lubuntu 24.04 (or similar versions
         ◦ Confirm that the VM has a virtual IP if connected to intnet.
     3. Test network access to other VMs (e.g., ping Ubuntu Server or OPNsense).
 
-'''
+
+---
+
+
+**📘 How to Install Ubuntu Server on VirtualBox**
+
+This guide walks you through installing Ubuntu Server on VirtualBox, configuring it for basic usage including SSH access.
+
+Prerequisites
+    • Download and install VirtualBox.
+    • Download the latest Ubuntu Server ISO from the official site (e.g., 22.04 LTS or 24.04 LTS).
+
+🖥️ Step 1: Create a New Virtual Machine
+    1. Open VirtualBox and click New.
+    2. Name your VM (e.g., Ubuntu_Server).
+    3. Set:
+        ◦ Type: Linux
+        ◦ Version: Ubuntu (64-bit)
+    4. Assign memory (RAM). Recommended: 2048 MB or more.
+    5. Create a new virtual hard disk:
+        ◦ Format: VDI
+        ◦ Storage on physical hard disk: Dynamically allocated
+        ◦ Size: At least 10 GB
+
+📀 Step 2: Attach Ubuntu Server ISO
+    1. Go to Settings → Storage.
+    2. Under Controller: IDE, click the empty optical drive.
+    3. Click the small CD icon on the right and select Choose a disk file.
+    4. Browse to your downloaded Ubuntu Server ISO and select it.
+
+🌐 Step 3: Configure Network (Optional)
+    • For basic internet access, use Adapter 1 as NAT.
+    • For advanced setups (e.g., with OPNsense firewall), add Adapter 2 as Internal Network and name it (e.g., intnet).
+
+🚀 Step 4: Start the VM and Install Ubuntu Server
+    1. Start the VM.
+    2. From the GRUB menu, select “Try or Install Ubuntu Server”.
+    3. Follow the installation prompts:
+        ◦ Select language and keyboard layout.
+        ◦ Configure network (default DHCP or manual).
+        ◦ Select the virtual hard disk to install to (e.g., VBOX_HARDDISK).
+        ◦ Choose guided partitioning (use entire disk with LVM recommended).
+        ◦ Create your user account (username and password).
+        ◦ Enable OpenSSH server for remote access.
+        ◦ Skip installing snaps for now (optional).
+
+🛠️ Step 5: Complete Installation and Reboot
+    1. Wait for the installer to complete (this can take several minutes).
+    2. When prompted, reboot the VM.
+    3. Before reboot or after shutdown, detach the ISO:
+        ◦ Go to Settings → Storage.
+        ◦ Select the optical drive under Controller: IDE.
+        ◦ Click the CD icon and choose Remove disk from virtual drive (or Empty).
+    4. Start the VM again — it will boot from the installed system.
+
+👤 Step 6: Login and Post-Installation
+    1. Log in using the username and password created during installation.
+    2. Update the system:
+       sudo apt update && sudo apt upgrade -y
+    3. Begin configuring your server (e.g., set up file sharing, firewall, etc.).
+
+---
