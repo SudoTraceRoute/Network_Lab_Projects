@@ -122,9 +122,36 @@ Prerequisites
     4. Start the VM again — it will boot from the installed system.
 
 👤 Step 6: Login and Post-Installation
-    1. Log in using the username and password created during installation.
-    2. Update the system:
-       sudo apt update && sudo apt upgrade -y
-    3. Begin configuring your server (e.g., set up file sharing, firewall, etc.).
+    1. First Login using the username and password created during installation.
+    2. Update packages:
+      sudo apt update && sudo apt upgrade -y
+    3. Confirm SSH server is running:
+       sudo systemctl status ssh
+    4. Install Samba for file sharing:
+       sudo apt install samba -y
+    5. Create and configure shared folder:
+       sudo mkdir -p /srv/samba/share
+       sudo chown nobody:nogroup /srv/samba/share
+       sudo chmod 2775 /srv/samba/share
+    7. Edit Samba config (sudo nano /etc/samba/smb.conf), add:
+       [shared]
+         path = /srv/samba/share
+         browseable = yes
+         read only = no
+         guest ok = yes
+         force user = nobody
+    8  Restart Samba:
+       sudo systemctl restart smbd
+
+Optional:
+    • Set static IP on LAN interface (if you want fixed IP instead of DHCP)
+    • Create users for Samba if you want authenticated shares
+    • Set up firewall rules on OPNsense to control access
+
 
 ---
+
+
+
+
+
