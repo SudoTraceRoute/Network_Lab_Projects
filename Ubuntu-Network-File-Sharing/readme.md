@@ -87,7 +87,7 @@ Restart the Samba service:
 
 ---
 🔍 Troubleshooting SMB Access from Android Problem
-Could not connect from Android phone using Cx File Explorer. Connection timed out or showed “empty folder”.
+Could not connect from Android phone using Cx File Explorer. Connection timed out.
 
 
 Diagnostic Steps
