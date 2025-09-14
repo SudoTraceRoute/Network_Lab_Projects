@@ -141,20 +141,7 @@ Phone can now connect with Cx File Explorer or X-plore
 
 Share appears as expected
 
-🔐 (Optional) Firewall Lockdown with OPNsense
-Coming soon: restrict Samba access so only your phone can connect, and block all other LAN devices using OPNsense firewall rules.
 
-📸 Screenshots of:
-
-Ubuntu IP config
-
-Samba config file
-
-Cx File Explorer showing share
-
-OPNsense rule (if added)
-
-```
 ---
 
 **Network Diagram**
@@ -177,17 +164,6 @@ Connectivity: All active devices communicate via the physical router without net
     
 The diagram helps visualize device roles, IP addressing, and physical vs virtual network boundaries.
 
----
-
-
-🧠 Lessons Learned
-IP conflicts silently break LAN access — always check both ends
-
-Bridged VM networking allows full LAN participation
-
-Samba is fast to set up for testing, but care is needed with permissions
-
-Real-world troubleshooting is more valuable than perfect tutorials
 
 ---
 
@@ -200,9 +176,7 @@ https://docs.opnsense.org/manual/firewall.html
 
 
 
-
-
-
+---
 
 ## 📘 Lessons Learned
 
