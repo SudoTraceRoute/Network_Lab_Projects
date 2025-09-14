@@ -141,6 +141,9 @@ Phone can now connect with Cx File Explorer or X-plore
 
 Share appears as expected
 
+---
+
+**Please see the screenshots of this process**
 
 ---
 
