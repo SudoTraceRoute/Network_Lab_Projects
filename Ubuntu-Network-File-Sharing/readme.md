@@ -149,13 +149,21 @@ OPNsense rule (if added)
 
 **Network Diagram**
 Network Diagram Description
+
 The network diagram illustrates the current lab setup:
-    • Physical LAN (192.168.1.0/24):
+
+Physical LAN (192.168.1.0/24):
+
 Includes the physical router (192.168.1.1), host PC, Android phone, and the Ubuntu Server VM.
+
     • Ubuntu Server: Connected via a bridged adapter with static IP 192.168.1.150, making it accessible on the LAN.
+    
     • Lubuntu VM: Has two adapters — one NAT adapter (10.0.2.15) for internet access and one internal network adapter (not assigned an IP or used in this setup).
+    
     • OPNsense VM: Present but turned off; intended for future segmentation and firewalling.
+    
     • Connectivity: All active devices communicate via the physical router without network segmentation, meaning there is currently one flat LAN.
+    
 The diagram helps visualize device roles, IP addressing, and physical vs virtual network boundaries.
 
 
