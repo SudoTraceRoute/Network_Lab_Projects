@@ -1,44 +1,63 @@
-✅ Project Overview
+
+## ✅ Project Overview
+
 This lab simulates a small home network environment using:
 
-Ubuntu Server running in VirtualBox
-Samba for file sharing
-Android phone as client
-Bridged networking for LAN access
-Troubleshooting and configuration steps included
-📂 Goal
+- **Ubuntu Server** running in **VirtualBox**
+- **Samba** for file sharing
+- **Android phone** as client
+- Bridged networking for LAN access
+- Troubleshooting and configuration steps included
+
+---
+
+## 📂 Goal
+
 Set up a Samba file share on a local Ubuntu Server VM and access it from two different clients:
 
-Android Phone (connected to the same LAN):
-Upload a photo to the server
+1. **Android Phone** (connected to the same LAN):  
+   Upload a photo to the server
 
-Lubuntu VM (NAT):
-Download a photo from the server
+2. **Lubuntu VM** (NAT):  
+   Download a photo from the server
 
-This lab demonstrates basic network file sharing across platforms using Samba, simulating a small-scale office or home network environment.
+This lab demonstrates cross-platform file sharing and access control using Samba.  
+In a future (optional) Phase 2, access to the Ubuntu Server will be restricted via an **OPNsense firewall**, simulating a more secure network environment.
 
-In a following projects, access to the Ubuntu Server will be restricted using an OPNsense firewall, simulating zone-based access control and improved network security.
+---
 
-🖼️ See the Network_diagram.png for a visual overview of the setup.
+## 🔧 Tools Used
 
-🔧 Tools Used
-Component	Details
-Host OS	Linux or Windows
-VirtualBox	VM platform
-Ubuntu Server	Guest OS (no GUI)
-Android Phone	Used for accessing SMB share
-Cx File Explorer	Android app for SMB
-OPNsense (optional)	Firewall VM for LAN segmentation
-🛠️ Setup Summary
-Ubuntu Server Network
-Interface: enp0s3
-Bridged Mode (connected to physical LAN)
-Static IP: 192.168.1.150
-Samba Share
-Folder path: /srv/samba/shared
-Access: Guest (no password)
-Share name: Shared
-✅ Samba Installation and Configuration
+| Component       | Details                            |
+|----------------|-------------------------------------|
+| Host OS         | Linux or Windows                   |
+| VirtualBox      | VM platform                        |
+| Ubuntu Server   | Guest OS (no GUI)                  |
+| Android Phone   | Used for accessing SMB share       |
+| Cx File Explorer| Android app for SMB                |
+| OPNsense (optional) | Firewall VM for LAN segmentation |
+
+---
+
+## 🛠️ Setup Summary
+
+### Ubuntu Server Network
+
+- Interface: `enp0s3`
+- Bridged Mode (connected to physical LAN)
+- Static IP: `192.168.1.150`
+
+### Samba Share
+
+- Folder path: `/srv/samba/shared`
+- Access: Guest (no password)
+- Share name: `Shared`
+
+---
+
+## ✅ Samba Installation and Configuration
+
+```
 Step 1: Install Samba
 
 - sudo apt update
@@ -135,7 +154,10 @@ Cx File Explorer showing share
 
 OPNsense rule (if added)
 
-Network Diagram
+```
+---
+
+**Network Diagram**
 
 Network Diagram Description
 
@@ -146,16 +168,20 @@ Physical LAN (192.168.1.0/24):
 Includes the physical router (192.168.1.1), host PC, Android phone, and the Ubuntu Server VM.
 
 Ubuntu Server: Connected via a bridged adapter with static IP 192.168.1.150, making it accessible on the LAN.
-
+    
 Lubuntu VM: Has two adapters — one NAT adapter (10.0.2.15) for internet access and one internal network adapter (not assigned an IP or used in this setup).
-
+    
 OPNsense VM: Present but turned off; intended for future segmentation and firewalling.
-
+    
 Connectivity: All active devices communicate via the physical router without network segmentation, meaning there is currently one flat LAN.
-
+    
 The diagram helps visualize device roles, IP addressing, and physical vs virtual network boundaries.
 
-🧠 Lessons Learned IP conflicts silently break LAN access — always check both ends
+---
+
+
+🧠 Lessons Learned
+IP conflicts silently break LAN access — always check both ends
 
 Bridged VM networking allows full LAN participation
 
@@ -163,22 +189,33 @@ Samba is fast to set up for testing, but care is needed with permissions
 
 Real-world troubleshooting is more valuable than perfect tutorials
 
-📚 References https://wiki.samba.org
+---
+
+📚 References
+https://wiki.samba.org
 
 https://ubuntu.com/server/docs/samba-file-server
 
 https://docs.opnsense.org/manual/firewall.html
 
-📘 Lessons Learned
+
+
+
+
+
+
+## 📘 Lessons Learned
+
 This project wasn't just about setting things up — it was about learning how to troubleshoot and adapt when things don’t work the first time. Here are some of the key takeaways:
 
-🧠 1. IP Conflicts Are The Real Thing
-My server and phone both got assigned the same IP (192.168.1.5), which broke SMB access with no clear error message. I learned how to detect and resolve IP conflicts by manually assigning a static IP.
+### 🧠 1. IP Conflicts Are The Real Thing
+My server and phone both got assigned the same IP (`192.168.1.5`), which broke SMB access with no clear error message. I learned how to detect and resolve IP conflicts by manually assigning a static IP.
 
-🧠 2. There’s More Than One Way to Configure Networking in Ubuntu
-I initially expected Ubuntu to use netplan or /etc/network/interfaces, but neither existed. That forced me to research and learn about systemd-networkd, which is used in minimal or headless Ubuntu Server installations. I manually created a .network config file and applied it successfully.
+### 🧠 2. There’s More Than One Way to Configure Networking in Ubuntu  
+I initially expected Ubuntu to use `netplan` or `/etc/network/interfaces`, but neither existed. That forced me to research and learn about `systemd-networkd`, which is used in minimal or headless Ubuntu Server installations. I manually created a `.network` config file and applied it successfully.
 
-🧠 3. Don’t Assume It’s a Samba Problem
+### 🧠 3. Don’t Assume It’s a Samba Problem  
 Even though the file share appeared "empty," it wasn’t Samba’s fault — it was a network-level issue (IP conflict). This helped me build better troubleshooting habits by checking IPs, services, and routes before changing configs blindly.
 
-🚀 This project taught me practical Linux networking, service configuration, and troubleshooting — all things a person would encounter in real IT and sysadmin roles.
+
+> 🚀 This project taught me practical Linux networking, service configuration, and troubleshooting — all things a person would encounter in real IT and sysadmin roles.
