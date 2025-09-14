@@ -1,7 +1,3 @@
-# Networking_Lab_Projects-readme.md
-Different networking lab projects
-
-
 # 🧪 Network Lab Projects
 
 Welcome to the **Network Lab Projects** repository! This is a collection of hands-on networking projects aimed at simulating and understanding key components of modern network infrastructures — from basic client-server communication to enterprise-grade security and monitoring systems.
