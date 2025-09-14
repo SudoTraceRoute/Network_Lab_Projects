@@ -18,7 +18,7 @@ Set up a Samba file share on a local Ubuntu Server VM and access it from two dif
 1. **Android Phone** (connected to the same LAN):  
    Upload a photo to the server
 
-2. **Lubuntu VM** (same or bridged network):  
+2. **Lubuntu VM** (NAT):  
    Download a photo from the server
 
 This lab demonstrates cross-platform file sharing and access control using Samba.  
