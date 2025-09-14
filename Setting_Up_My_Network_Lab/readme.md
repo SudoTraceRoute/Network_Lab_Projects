@@ -1,6 +1,6 @@
 Here you will find the instructions on how to install and configure Ubuntu server runing Samba, Lubuntu and OPNsense in VirtualBox.
 
----
+'''
 **📘 Lubuntu Installation – VirtualBox Setup Guide**
 This guide outlines the process of installing Lubuntu 24.04 (or similar versions) in a VirtualBox virtual machine. Lubuntu was selected as a lightweight desktop client OS for use in a virtual networking lab (with OPNsense and Ubuntu Server).
 
@@ -65,4 +65,4 @@ This guide outlines the process of installing Lubuntu 24.04 (or similar versions
         ◦ Confirm that the VM has a virtual IP if connected to intnet.
     3. Test network access to other VMs (e.g., ping Ubuntu Server or OPNsense).
 
----
+'''
