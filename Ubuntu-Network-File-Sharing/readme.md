@@ -75,9 +75,8 @@ Add at the bottom:
 Restart the Samba service:
 sudo systemctl restart smbd
 
-
-🔍 Troubleshooting SMB Access from Android
-Problem
+---
+🔍 Troubleshooting SMB Access from Android Problem
 Could not connect from Android phone using Cx File Explorer. Connection timed out or showed “empty folder”.
 
 
@@ -98,6 +97,7 @@ LISTEN 0 50 0.0.0.0:445
 ✅ 3. Checked Server IP Address
 ip a
 Found IP: 192.168.1.5
+
 
 
 ⚠️ 4. Discovered IP Conflict
@@ -145,9 +145,10 @@ Cx File Explorer showing share
 OPNsense rule (if added)
 
 
-
+---
 
 **Network Diagram**
+
 Network Diagram Description
 
 The network diagram illustrates the current lab setup:
@@ -166,6 +167,7 @@ Connectivity: All active devices communicate via the physical router without net
     
 The diagram helps visualize device roles, IP addressing, and physical vs virtual network boundaries.
 
+---
 
 
 🧠 Lessons Learned
@@ -176,6 +178,8 @@ Bridged VM networking allows full LAN participation
 Samba is fast to set up for testing, but care is needed with permissions
 
 Real-world troubleshooting is more valuable than perfect tutorials
+
+---
 
 📚 References
 https://wiki.samba.org
