@@ -26,7 +26,7 @@ This lab demonstrates basic network file sharing across platforms using Samba, s
 In a following projects, access to the Ubuntu Server will be restricted using an **OPNsense firewall**, simulating zone-based access control and improved network security.
 
 
-🖼️ See the `Network-diagram.png` for a visual overview of the setup.
+🖼️ See the `Network_diagram.png` for a visual overview of the setup.
 
 ---
 
