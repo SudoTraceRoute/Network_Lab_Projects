@@ -48,32 +48,33 @@ Set up a Samba file share on a local Ubuntu Server VM and access it from an Andr
 
 ## ✅ Samba Installation and Configuration
 
+```
 Step 1: Install Samba
 
-sudo apt update
-sudo apt install samba -y
+- sudo apt update
+- sudo apt install samba -y
 
 
 Step 2: Create Share Folder
 
-sudo mkdir -p /srv/samba/shared
-sudo chmod 0777 /srv/samba/shared
+- sudo mkdir -p /srv/samba/shared
+- sudo chmod 0777 /srv/samba/shared
 
 
 Step 3: Configure Samba
 Edit the config:
 
-sudo nano /etc/samba/smb.conf
+- sudo nano /etc/samba/smb.conf
 Add at the bottom:
 
 [Shared]
-   path = /srv/samba/shared
-   browseable = yes
-   read only = no
-   guest ok = yes
+  path = /srv/samba/shared
+  browseable = yes
+  read only = no
+  guest ok = yes
 
 Restart the Samba service:
-sudo systemctl restart smbd
+- sudo systemctl restart smbd
 
 ---
 🔍 Troubleshooting SMB Access from Android Problem
@@ -101,14 +102,15 @@ Found IP: 192.168.1.5
 
 
 ⚠️ 4. Discovered IP Conflict
-Phone was also assigned 192.168.1.5 via DHCP → IP conflict!
+
+- Phone was also assigned 192.168.1.5 via DHCP → IP conflict!
 
 ✅ Resolution: Set Static IP for Server
-systemd-networkd config:
+- systemd-networkd config:
 
-sudo nano /etc/systemd/network/10-enp0s3.network
+- sudo nano /etc/systemd/network/10-enp0s3.network
 
-Paste:
+- Paste:
 
 [Match]
 Name=enp0s3
@@ -120,7 +122,7 @@ DNS=1.1.1.1 8.8.8.8
 
 Apply:
 
-sudo systemctl restart systemd-networkd
+- sudo systemctl restart systemd-networkd
 
 
 🔁 Verified Fix
@@ -133,8 +135,7 @@ Share appears as expected
 🔐 (Optional) Firewall Lockdown with OPNsense
 Coming soon: restrict Samba access so only your phone can connect, and block all other LAN devices using OPNsense firewall rules.
 
-📸 Screenshots (Recommended)
-Include screenshots of:
+📸 Screenshots of:
 
 Ubuntu IP config
 
@@ -144,7 +145,7 @@ Cx File Explorer showing share
 
 OPNsense rule (if added)
 
-
+```
 ---
 
 **Network Diagram**
