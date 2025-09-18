@@ -91,27 +91,6 @@ Mode: **Hybrid Outbound NAT**
     • ✅ Verified firewall state tables and packet capture
     • ✅ Confirmed OPNsense NAT & Firewall behavior using logging and Live View
 
-✅ Final Behavior
-Client
-Internet
-Can Reach Server
-Can Reach Others
-Ubuntu Server
-✅
-—
-Full LAN access
-Lubuntu
-✅
-—
-Full LAN access
-Lubuntu_2
-✅
-✅ Ubuntu Server
-❌ No other LAN access
-
-📁 Project Contents (GitHub)
-
-
 
 📌 Notes
     • OPNsense is a stateful firewall — return traffic is allowed automatically
