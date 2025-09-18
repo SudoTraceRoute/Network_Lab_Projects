@@ -1,10 +1,10 @@
-# 🔐 Segmented Virtual Network with OPNsense Firewall (VirtualBox Lab)
+#  Segmented Virtual Network with OPNsense Firewall (VirtualBox Lab)
 
 This project sets up two isolated subnets in VirtualBox using **OPNsense** as the router/firewall. It demonstrates subnet segmentation, internet access, and strict firewall controls using free and open-source tools. Here we are showing on a small scale, some of the practices that are often used in compnanies.
 
 ---
 
-## 📐 Network Topology
+##  Network Topology
 
 ![Screenshot](https://github.com/SudoTraceRoute/Network_Lab_Projects/blob/main/3.%20Segmented%20Virtual%20Network%20with%20OPNsense%20Firewall%20(VirtualBox%20Lab)/Network_topology.png)
 
@@ -12,15 +12,15 @@ This project sets up two isolated subnets in VirtualBox using **OPNsense** as th
 
 ---
 
-## 🛠️ VirtualBox VM Configuration
+##  VirtualBox VM Configuration
 
-### 🔧 OPNsense VM
+###  OPNsense VM
 
 - **Adapter 1 (em0)**: Bridged Adapter (WAN)
 - **Adapter 2 (em1)**: Internal Network `intnet1` (LAN)
 - **Adapter 3 (em2)**: Internal Network `intnet2` (LAN2)
 
-### 💻 Other VMs
+###  Other VMs
 
 | VM           | Adapter Network | IP Address      | Gateway         |
 |--------------|------------------|------------------|------------------|
@@ -32,7 +32,7 @@ All guest VMs use **static IPs**.
 
 ---
 
-## 🌐 OPNsense Configuration
+##  OPNsense Configuration
 
 ### Interfaces
 
@@ -60,7 +60,7 @@ Mode: **Hybrid Outbound NAT**
 
 ---
 
-## 🔐 Firewall Rules
+##  Firewall Rules
 
 ### LAN (192.168.10.0/24)
 
