@@ -5,7 +5,7 @@ This project sets up two isolated subnets in VirtualBox using **OPNsense** as th
 ---
 
 ## 📐 Network Topology
-- Please see the image:
+
 ![Screenshot](https://github.com/SudoTraceRoute/Network_Lab_Projects/blob/main/3.%20Segmented%20Virtual%20Network%20with%20OPNsense%20Firewall%20(VirtualBox%20Lab)/Network_topology.png)
 
 
