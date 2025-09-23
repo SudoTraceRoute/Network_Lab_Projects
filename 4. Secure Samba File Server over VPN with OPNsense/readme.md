@@ -29,19 +29,6 @@ While this implementation is confined to the local network due to CG-NAT ISP lim
 | Mobile Client | CX File Explorer (Android)     |
 | Protocols     | SMBv1 (temp), SMBv2+, TCP 139/445 |
 
----
-
-## 🗺️ Network Topology
-
-[Android Phone]
-      |
-[VPN Tunnel]
-      |
-[OPNsense Firewall]
-      |
-[Isolated Server Subnet]
-      |
-[Ubuntu Server running Samba]
 
 ---
 
