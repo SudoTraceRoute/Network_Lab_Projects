@@ -42,12 +42,19 @@ While this implementation is confined to the local network due to CG-NAT ISP lim
 - Samba config:
   
   [Public]
+  
      path = /srv/samba/public
+  
      browsable = yes
+  
      writable = yes
+  
      guest ok = yes
+  
      guest only = yes
+  
      force user = nobody
+
   
 2. VPN Configuration (OPNsense)
     • VPN type: WireGuard
