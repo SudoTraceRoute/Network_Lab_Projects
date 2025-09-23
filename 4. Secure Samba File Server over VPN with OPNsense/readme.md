@@ -57,46 +57,75 @@ While this implementation is confined to the local network due to CG-NAT ISP lim
 
   
 2. VPN Configuration (OPNsense)
+3. 
     • VPN type: WireGuard
+   
     • Client: Android (WireGuard app)
+   
     • Routing: VPN subnet to Samba subnet
+   
     • DNS: Internal DNS
+
    
-4. Firewall Rules
+5. Firewall Rules
+
     • Allow from VPN interface:
-        ◦ TCP 139 (NetBIOS Session)
-        ◦ TCP 445 (SMB)
    
-6. Android Client Test
+        ◦ TCP 139 (NetBIOS Session)
+   
+        ◦ TCP 445 (SMB)
+
+   
+7. Android Client Test
+   
     • App: CX File Explorer
+   
     • Method: Connect via SMB to 192.168.x.x/Public
+   
     • Auth: Guest  (no password)
+   
     • Test: Upload image to Samba share
+   
 
 🔐 Security Notes
+
     • Guest access allowed for convenience (can be hardened later)
+    
     • Temporarily enabled SMBv1 (server min protocol = NT1) to support CX File Explorer
+
       
 
-📷 Screenshots (Suggested)
+📷 Screenshots
 
 1. ✅ Successful VPN Connection (on phone)
 e.g. WireGuard app "Connected"
+
 2. 📁 CX File Explorer Connected to Share
 Showing the Public folder contents
-3. 📤 Upload Confirmation / Image in Share
+
+3. 📤 Upload Confirmation / Images in Share
 A photo uploaded and visible in /srv/samba/public
+
 4. 🔧 OPNsense Firewall Rules
 Screenshot of rule allowing VPN → Samba ports (redact IPs)
-5. 💻 Server-side Confirmation
+
+6. 💻 Server-side Confirmation
 Terminal screenshot: ls /srv/samba/public showing uploaded file
 
+
+
 📚 Learning Outcomes
+
     • VPN tunneling
+    
     • Subnet design and inter-network routing
+    
     • Secure Samba deployment over isolated networks
+    
     • Firewall rule planning and testing
+    
     • Cross-platform service access (Android ↔ Linux)
+    
 
 📦 License
 MIT License
