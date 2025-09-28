@@ -7,7 +7,7 @@ It enables secure SSH and Samba file access from an Android phone — no public 
 
 ## Architecture Diagram 
 
-![Network Diagram] (link)
+![Network Diagram] ([link](https://github.com/SudoTraceRoute/Network_Lab_Projects/blob/main/5.%20Remote%20access%20to%20the%20Ubuntu%20server%20via%20Tailscale/Network_diagram_Tailscale_tunnel.drawio.png))
 
 ---
 
