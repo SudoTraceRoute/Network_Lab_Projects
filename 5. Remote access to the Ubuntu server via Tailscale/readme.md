@@ -51,7 +51,8 @@ Due to the limitations of my 5G SIM router, which operates behind carrier-grade 
    - Tap on '+ new location'
    - Tap 'remote' --> 'smb'
    - Enter the IP Tailscale has asssigned to the server,
-   - Under 'Display name' add name/description of the device you are connecting to
+   - Under 'Display name' add name/description of the device you are connecting to.
+     
 Note: for the demontration purpouses, I have enabled "guest" login to the samba server, without additional passwords 
 
 ---
