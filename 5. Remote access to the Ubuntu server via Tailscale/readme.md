@@ -5,8 +5,8 @@ It enables secure SSH and Samba file access from an Android phone — no public 
 
 ---
 
-## Architecture Diagram (Optional but Valuable)
-Use a tool like draw.io or diagrams.net to show something like:
+## Architecture Diagram 
+
 [Android Phone] -- Tailscale --> [Ubuntu Server VM]
                                ↗︎
                          [OPNsense VM]
