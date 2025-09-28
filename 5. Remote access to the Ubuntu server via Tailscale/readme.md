@@ -7,12 +7,7 @@ It enables secure SSH and Samba file access from an Android phone — no public 
 
 ## Architecture Diagram 
 
-[Android Phone] -- Tailscale --> [Ubuntu Server VM]
-                               ↗︎
-                         [OPNsense VM]
-                               ↖︎
-                        [5G Router w/ CG-NAT]
-
+![Network Diagram] (link)
 
 ---
 
