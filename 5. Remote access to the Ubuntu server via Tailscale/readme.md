@@ -31,13 +31,13 @@ Due to the limitations of my 5G SIM router, which operates behind carrier-grade 
 
 - Install & Configure Tailscale:
   
-curl -fsSL https://tailscale.com/install.sh | sh
+- curl -fsSL https://tailscale.com/install.sh | sh
 
-sudo tailscale up
+- sudo tailscale up
 
-     Login with same Tailscale account as your phone (just using e-mail address to login)
+-  Login with same Tailscale account as your phone (just using e-mail address to login)
     
-     Get Tailscale IP with tailscale status
+- Get Tailscale IP with tailscale status
 
 
 
