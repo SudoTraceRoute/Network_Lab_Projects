@@ -29,7 +29,7 @@ Due to the limitations of my 5G SIM router, which operates behind carrier-grade 
 
 ## Installation Steps
 
-- Install & Configure Tailscale:
+## Install & Configure Tailscale:
   
 - curl -fsSL https://tailscale.com/install.sh | sh
 
@@ -41,7 +41,7 @@ Due to the limitations of my 5G SIM router, which operates behind carrier-grade 
 
 
 
-- Android phone Setup
+## Android phone Setup:
 
 1. Install Tailscale from Play Store
    
