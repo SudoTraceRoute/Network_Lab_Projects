@@ -1,7 +1,12 @@
 ## Project Overview
 This project demonstrates how to remotely access an Ubuntu server (running as a VM behind a CG-NAT router and OPNsense firewall) using Tailscale. 
 It enables secure SSH and Samba file access from an Android phone — no public IP, port forwarding, or dynamic DNS required.
-Due to the limitations of my 5G SIM router, which operates behind carrier-grade NAT (CG-NAT) and lacks a publicly routable IPv4 address, I was unable to set up port forwarding. To work around this, I implemented Tailscale, which creates a secure, peer-to-peer encrypted tunnel without requiring a public IP. Tailscale attempts to establish a direct encrypted peer-to-peer connection between the phone and the server. When direct connectivity is blocked due to CG-NAT, Tailscale routes encrypted traffic through its nearest DERP relay server as a fallback — ensuring end-to-end secure communication even without port forwarding or public IPs
+
+Due to the limitations of my 5G SIM router, which operates behind carrier-grade NAT (CG-NAT) and lacks a publicly routable IPv4 address, I was unable to set up port forwarding. To work around this, I implemented Tailscale, which creates a secure, peer-to-peer encrypted tunnel without requiring a public IP. 
+
+Tailscale attempts to establish a direct encrypted peer-to-peer connection between the phone and the server. When direct connectivity is blocked due to CG-NAT, Tailscale routes encrypted traffic through its nearest DERP relay server as a fallback — ensuring end-to-end secure communication even without port forwarding or public IPs.
+
+
 
 
 
