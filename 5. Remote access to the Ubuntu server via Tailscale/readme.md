@@ -30,15 +30,23 @@ Due to the limitations of my 5G SIM router, which operates behind carrier-grade 
 ## Installation Steps
 
 - Install & Configure Tailscale:
+- 
 curl -fsSL https://tailscale.com/install.sh | sh
+
 sudo tailscale up
+
     • Login with same Tailscale account as your phone (just using e-mail address to login)
+    
     • Get Tailscale IP with tailscale status
+
+
 
 - Android phone Setup
 
 1. Install Tailscale from Play Store
+   
 2. Log in with same Tailscale account
+   
 3. CX File Explorer (Samba) to connect
    - Tap on '+ new location'
    - Tap 'remote' --> 'smb'
