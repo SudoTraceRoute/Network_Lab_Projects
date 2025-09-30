@@ -1,8 +1,9 @@
-Suricata IPS Setup on OPNsense to Block Tailscale
+## Suricata IPS Setup on OPNsense to Block Tailscale
 
 This guide outlines the steps taken to configure Suricata in IPS mode on OPNsense, with custom rules to detect and block Tailscale and WireGuard traffic.
 
-✅ Summary
+
+## ✅ Summary
 
 Enabled Suricata IPS mode on OPNsense.
 
@@ -14,20 +15,23 @@ UDP port 51820 (standard WireGuard)
 
 TCP port 443 (Tailscale DERP fallback / HTTPS)
 
-📁 Custom Rules Directory
+
+- Custom Rules Directory
 
 Create a new directory for organizing custom rules:
 
 mkdir -p /usr/local/etc/suricata/opnsense-rules/
 
-✍️ Create Tailscale Rules File
+
+- Create Tailscale Rules File
 
 Edit the custom rule file:
 
 vi /usr/local/etc/suricata/opnsense-rules/tailscale.rules
 
 
-Paste the following rules:
+
+- Paste the following rules:
 
 # Block Tailscale - WireGuard UDP on port 41641
 drop udp any any -> any 41641 (msg:"TAILSCALE - Detected UDP traffic on port 41641 (Tailscale/WireGuard)"; sid:1000010; rev:1;)
@@ -38,26 +42,27 @@ drop udp any any -> any 51820 (msg:"TAILSCALE - Detected UDP traffic on port 518
 # Block potential fallback to HTTPS (TCP 443)
 drop tcp any any -> any 443 (msg:"TAILSCALE - Detected TCP traffic on port 443 (Possible HTTPS fallback)"; sid:1000012; rev:1;)
 
-🔗 Link Custom Rules into Suricata
+- Link Custom Rules into Suricata
 ln -s /usr/local/etc/suricata/opnsense-rules/tailscale.rules /usr/local/etc/suricata/rules/tailscale.rules
 
-⚙️ Enable the Rules in Suricata
+
+- Enable the Rules in Suricata
 
 Edit /usr/local/etc/suricata/suricata.yaml and make sure your custom file is listed under rule-files:
 
 rule-files:
   - tailscale.rules
 
-🔄 Restart Suricata
+- Restart Suricata
 service suricata restart
 
-🧪 Verify Rule Load
+ Verify Rule Load
 suricata -T -c /usr/local/etc/suricata/suricata.yaml -v
 
 
 Look for tailscale.rules in the output and ensure no errors are shown.
 
-📋 Notes
+- Notes
 
 Rules set to drop will actively block traffic.
 
