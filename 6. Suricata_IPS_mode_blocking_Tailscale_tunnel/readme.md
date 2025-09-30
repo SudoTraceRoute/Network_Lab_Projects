@@ -33,13 +33,13 @@ vi /usr/local/etc/suricata/opnsense-rules/tailscale.rules
 
 - Paste the following rules:
 
-# Block Tailscale - WireGuard UDP on port 41641
+* Block Tailscale - WireGuard UDP on port 41641
 drop udp any any -> any 41641 (msg:"TAILSCALE - Detected UDP traffic on port 41641 (Tailscale/WireGuard)"; sid:1000010; rev:1;)
 
-# Block WireGuard default UDP port 51820
+* Block WireGuard default UDP port 51820
 drop udp any any -> any 51820 (msg:"TAILSCALE - Detected UDP traffic on port 51820 (Standard WireGuard)"; sid:1000011; rev:1;)
 
-# Block potential fallback to HTTPS (TCP 443)
+* Block potential fallback to HTTPS (TCP 443)
 drop tcp any any -> any 443 (msg:"TAILSCALE - Detected TCP traffic on port 443 (Possible HTTPS fallback)"; sid:1000012; rev:1;)
 
 - Link Custom Rules into Suricata
